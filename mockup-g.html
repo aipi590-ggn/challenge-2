@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio Judge · Final</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F9F6F2;
+    --surface: #FFFFFF;
+    --surface-2: #F3EDE7;
+    --border: #E8E0D8;
+    --border-2: #D0C4BA;
+    --text: #1A1410;
+    --text-2: #6B5E54;
+    --text-3: #B8A99E;
+    --accent: #E8472A;
+    --green: #2A9E6B;
+    --green-glow: rgba(42,158,107,0.14);
+    --rose: #D14B6A;
+    --orb-from: #E8472A;
+    --orb-to: #D14B6A;
+  }
+
+  html, body {
+    min-height: 100%;
+    background: var(--bg);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    color: var(--text);
+    /* prevent pull-to-refresh interfering with downward tie drag */
+    overscroll-behavior: none;
+  }
+
+  .back {
+    position: fixed; top: 18px; left: 20px; z-index: 200;
+    font-size: 0.75rem; color: var(--text-3); text-decoration: none;
+    transition: color 0.15s;
+  }
+  .back:hover { color: var(--text-2); }
+
+  /* ── Topbar ── */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 24px;
+    background: rgba(249,246,242,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .logo em { font-style: italic; color: var(--text-2); }
+  .topbar-right { display: flex; align-items: center; gap: 10px; }
+  .count-pill {
+    display: flex; align-items: center; gap: 7px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px; padding: 5px 12px;
+    font-size: 0.75rem; font-weight: 500; color: var(--text-2);
+  }
+  .count-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+  .export-btn {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 6px 12px;
+    font-size: 0.75rem; font-weight: 500; font-family: 'DM Sans', sans-serif;
+    color: var(--text-2); cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .export-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── Main ── */
+  .main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 72px 20px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 100vh;
+  }
+
+  /* ── Context card ── */
+  .context-card {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 12px 16px;
+  }
+  .ctx-avi {
+    width: 40px; height: 40px; border-radius: 11px; flex-shrink: 0;
+    background: linear-gradient(135deg, #F4A57A, #E8472A);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif; font-size: 0.9rem; color: white;
+  }
+  .ctx-info { flex: 1; min-width: 0; }
+  .ctx-name { font-family: 'DM Serif Display', serif; font-size: 0.9rem; margin-bottom: 1px; }
+  .ctx-sub { font-size: 0.75rem; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ctx-tags { display: flex; gap: 5px; flex-shrink: 0; }
+  .ctx-tag {
+    padding: 3px 9px; background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 20px; font-size: 0.68rem; color: var(--text-2); font-weight: 500;
+  }
+  .pair-badge { font-size: 0.7rem; color: var(--text-3); font-weight: 500; flex-shrink: 0; white-space: nowrap; }
+  .progress-dots { display: flex; gap: 5px; flex-shrink: 0; }
+  .pdot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); transition: background 0.3s; }
+  .pdot.done { background: var(--green); }
+  .pdot.active { background: var(--accent); }
+
+  /* ── Bio grid ── */
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .bio-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    /* transitions only for commit/reset states, not during live drag */
+    will-change: transform, opacity, box-shadow, border-color;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+  }
+  /* Animated state transitions */
+  .bio-card.animating {
+    transition: border-color 0.4s, box-shadow 0.4s, opacity 0.4s, transform 0.4s cubic-bezier(0.2,0.8,0.2,1);
+  }
+  .bio-card.state-winner {
+    border-color: var(--green);
+    box-shadow: 0 0 0 5px var(--green-glow);
+    transform: scale(1.01);
+  }
+  .bio-card.state-loser { opacity: 0.32; transform: scale(0.99); }
+  .bio-card.state-tie { border-color: var(--border-2); opacity: 0.75; }
+
+  .bio-label {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-3); margin-bottom: 12px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .winner-badge {
+    padding: 2px 8px; border-radius: 999px;
+    background: var(--green-glow); border: 1px solid rgba(42,158,107,0.25);
+    font-size: 0.65rem; font-weight: 600; color: var(--green);
+    opacity: 0; transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .bio-card.state-winner .winner-badge { opacity: 1; }
+
+  .bio-profile {
+    display: flex; align-items: center; gap: 9px; margin-bottom: 12px;
+  }
+  .bio-avi {
+    width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+    background: var(--surface-2); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+  }
+  .bio-pname { font-family: 'DM Serif Display', serif; font-size: 0.9rem; }
+  .bio-page { font-size: 0.72rem; color: var(--text-2); margin-top: 1px; }
+
+  .bio-text { font-size: 0.92rem; line-height: 1.7; color: var(--text); }
+
+  .bio-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; }
+  .bio-chip {
+    padding: 3px 9px; border-radius: 20px; font-size: 0.68rem;
+    color: var(--text-2); background: var(--surface-2); border: 1px solid var(--border);
+  }
+
+  /* ── Orb zone ── */
+  .orb-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0 4px;
+    position: relative;
+  }
+
+  /* The horizontal track */
+  .orb-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    max-width: 360px;
+    position: relative;
+    height: 72px;
+  }
+
+  .zone-label {
+    flex: 1;
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-3);
+    letter-spacing: 0.04em;
+    pointer-events: none;
+    transition: color 0.2s, transform 0.2s;
+    user-select: none;
+  }
+  .zone-label.lit { color: var(--green); transform: scale(1.05); }
+  .zone-label.a-label { text-align: right; padding-right: 18px; }
+  .zone-label.b-label { text-align: left; padding-left: 18px; }
+
+  /* Track line */
+  .orb-track::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 20%; right: 20%;
+    height: 1px;
+    background: var(--border);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  /* The orb itself */
+  .orb-wrap {
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+  }
+
+  #orb {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--orb-from), var(--orb-to));
+    box-shadow:
+      0 4px 16px rgba(232,71,42,0.32),
+      0 1px 3px rgba(0,0,0,0.1);
+    cursor: grab;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    /* compass icon via pseudo */
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  #orb:hover { transform: scale(1.06); box-shadow: 0 6px 20px rgba(232,71,42,0.4), 0 1px 3px rgba(0,0,0,0.1); }
+  #orb.grabbing { cursor: grabbing; transform: scale(1.08); }
+  #orb.snapping { transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s; }
+
+  /* Compass indicator inside orb */
+  .orb-compass {
+    display: grid;
+    grid-template-areas: ". up ." "left . right" ". down .";
+    gap: 3px;
+    pointer-events: none;
+  }
+  .orb-compass span {
+    width: 4px; height: 4px; border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+    transition: background 0.15s, transform 0.15s;
+  }
+  .orb-compass .up    { grid-area: up;    align-self: end; justify-self: center; }
+  .orb-compass .left  { grid-area: left;  align-self: center; justify-self: end; }
+  .orb-compass .right { grid-area: right; align-self: center; justify-self: start; }
+  .orb-compass .down  { grid-area: down;  align-self: start; justify-self: center; }
+  .orb-compass .center { display: none; }
+
+  /* Tie zone below */
+  .tie-zone {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 0.68rem; font-weight: 500; color: var(--text-3);
+    pointer-events: none; user-select: none;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .tie-zone.lit { color: var(--text-2); transform: translateY(2px); }
+  .tie-arrow { font-size: 0.7rem; transition: transform 0.2s; }
+  .tie-zone.lit .tie-arrow { transform: translateY(3px); }
+
+  /* Swipe-direction hint shown on first load */
+  .drag-hint {
+    position: absolute;
+    bottom: -20px;
+    left: 50%; transform: translateX(-50%);
+    font-size: 0.62rem; color: var(--text-3);
+    white-space: nowrap;
+    animation: fadeHint 3s ease 1.5s forwards;
+    opacity: 1;
+    pointer-events: none;
+  }
+  @keyframes fadeHint { to { opacity: 0; } }
+
+  /* ── History ── */
+  .history-section { border-top: 1px solid var(--border); padding-top: 20px; }
+  .history-title {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--text-3); margin-bottom: 10px;
+  }
+  .history-item {
+    display: flex; align-items: center; gap: 9px;
+    padding: 8px 0; border-bottom: 1px solid var(--border);
+    font-size: 0.8rem;
+  }
+  .history-item:last-child { border-bottom: none; }
+  .h-badge {
+    padding: 2px 8px; border-radius: 20px;
+    font-size: 0.65rem; font-weight: 600; flex-shrink: 0;
+  }
+  .h-badge.A { background: rgba(232,71,42,0.08); color: var(--accent); }
+  .h-badge.B { background: rgba(209,75,106,0.08); color: var(--rose); }
+  .h-badge.TIE { background: var(--surface-2); color: var(--text-2); }
+  .h-person { color: var(--text); font-weight: 500; }
+  .h-time { color: var(--text-3); margin-left: auto; font-size: 0.7rem; }
+  .history-empty { font-size: 0.8rem; color: var(--text-3); padding: 10px 0; }
+
+  /* ── Done overlay ── */
+  .done-overlay {
+    display: none; position: fixed; inset: 0; z-index: 300;
+    background: rgba(249,246,242,0.95); backdrop-filter: blur(8px);
+    flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+    text-align: center; padding: 40px;
+  }
+  .done-overlay.visible { display: flex; }
+  .done-icon { font-size: 2.5rem; }
+  .done-title { font-family: 'DM Serif Display', serif; font-size: 1.8rem; }
+  .done-sub { font-size: 0.88rem; color: var(--text-2); }
+  .done-btn {
+    margin-top: 8px; padding: 12px 28px; border-radius: 50px; border: none;
+    background: linear-gradient(135deg, var(--orb-from), var(--orb-to));
+    color: white; font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    font-weight: 600; cursor: pointer;
+    box-shadow: 0 4px 16px rgba(232,71,42,0.28);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .done-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,71,42,0.36); }
+
+  @media (max-width: 580px) {
+    .ctx-tags { display: none; }
+    .bio-grid { gap: 8px; }
+    .bio-card { padding: 14px; }
+    .bio-text { font-size: 0.85rem; }
+    .bio-chips { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="index.html">← back</a>
+
+<div class="topbar">
+  <div class="logo">bio<em>.</em>judge</div>
+  <div class="topbar-right">
+    <div class="count-pill">
+      <div class="count-dot"></div>
+      <span id="countLabel">0 collected</span>
+    </div>
+    <button class="export-btn" onclick="exportData()">Export JSONL</button>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- Context -->
+  <div class="context-card">
+    <div class="ctx-avi" id="ctxAvi">JM</div>
+    <div class="ctx-info">
+      <div class="ctx-name" id="ctxName">Jordan M., 26</div>
+      <div class="ctx-sub" id="ctxSub">Software engineer · NYC · hiking, cooking, live music</div>
+    </div>
+    <div class="ctx-tags" id="ctxTags"></div>
+    <div class="pair-badge" id="pairBadge">1 / 5</div>
+    <div class="progress-dots" id="progressDots"></div>
+  </div>
+
+  <!-- Bio cards -->
+  <div class="bio-grid">
+    <div class="bio-card" id="cardA">
+      <div class="bio-label">Bio A <span class="winner-badge">Preferred ✓</span></div>
+      <div class="bio-profile">
+        <div class="bio-avi">👤</div>
+        <div>
+          <div class="bio-pname" id="pnameA">Jordan</div>
+          <div class="bio-page" id="pageA">26 · Software Engineer</div>
+        </div>
+      </div>
+      <div class="bio-text" id="textA"></div>
+      <div class="bio-chips" id="tagsA"></div>
+    </div>
+    <div class="bio-card" id="cardB">
+      <div class="bio-label">Bio B <span class="winner-badge">Preferred ✓</span></div>
+      <div class="bio-profile">
+        <div class="bio-avi">👤</div>
+        <div>
+          <div class="bio-pname" id="pnameB">Jordan</div>
+          <div class="bio-page" id="pageB">26 · Software Engineer</div>
+        </div>
+      </div>
+      <div class="bio-text" id="textB"></div>
+      <div class="bio-chips" id="tagsB"></div>
+    </div>
+  </div>
+
+  <!-- Orb zone -->
+  <div class="orb-zone">
+    <div class="orb-track">
+      <div class="zone-label a-label" id="zoneA">← A</div>
+      <div class="orb-wrap">
+        <div id="orb">
+          <div class="orb-compass">
+            <span class="up"></span>
+            <span class="left"></span>
+            <span class="right"></span>
+            <span class="down"></span>
+          </div>
+        </div>
+        <div class="drag-hint">drag to prefer</div>
+      </div>
+      <div class="zone-label b-label" id="zoneB">B →</div>
+    </div>
+    <div class="tie-zone" id="zoneTie">
+      <span class="tie-arrow">↓</span>
+      <span>drag down for tie</span>
+    </div>
+  </div>
+
+  <!-- History -->
+  <div class="history-section">
+    <div class="history-title">Collected Preferences</div>
+    <div id="historyList"><div class="history-empty">No preferences yet.</div></div>
+  </div>
+
+</div>
+
+<!-- Done overlay -->
+<div class="done-overlay" id="doneOverlay">
+  <div class="done-icon">✓</div>
+  <div class="done-title" id="doneTitle">All done!</div>
+  <div class="done-sub" id="doneSub">0 preferences collected.</div>
+  <button class="done-btn" onclick="exportData()">Export JSONL</button>
+  <button class="done-btn" style="background:none;border:1px solid var(--border);color:var(--text-2);box-shadow:none;" onclick="restartAll()">Start over</button>
+</div>
+
+<script>
+const PAIRS = [
+  {
+    person: { name: 'Jordan M., 26', sub: 'Software engineer · NYC · hiking, cooking Italian, live music', tags: ['tech','outdoors','music'], avi: 'JM', age: '26 · Software Engineer' },
+    a: { text: 'I love hiking and cooking Italian food. I work in tech and spend my weekends exploring the city. Big music fan always looking for concert buddies. Looking for someone genuine who wants to build something real.', tags: ['hiking','cooking','live music'] },
+    b: { text: 'I write code that works on my machine (usually). I make pasta from scratch on Sundays because it\'s the only thing slower than my test suite. If your idea of a perfect night involves arguing whether Die Hard is a Christmas movie — we\'re going to get along great.', tags: ['pasta nerd','film takes','bad debugger'] }
+  },
+  {
+    person: { name: 'Casey L., 24', sub: 'Kindergarten teacher · Brooklyn · reader, plant mom, yoga', tags: ['books','plants','yoga'], avi: 'CL', age: '24 · Teacher' },
+    a: { text: 'I spend my days teaching 5-year-olds that sharing is caring, then immediately fail to share my fries. 47 plants, zero regrets. Currently on a Russian lit kick — which explains the vague existential expression.', tags: ['plant mom','Dostoevsky','yoga'] },
+    b: { text: 'Elementary teacher who loves reading and plants. I do yoga on weekends and love exploring coffee shops around Brooklyn. Looking for someone kind and adventurous to spend time with.', tags: ['reading','plants','coffee'] }
+  },
+  {
+    person: { name: 'Avery K., 28', sub: 'UX designer · Manhattan · travel, climbing, film photography', tags: ['design','travel','climbing'], avi: 'AK', age: '28 · Designer' },
+    a: { text: 'I collect passport stamps and climbing calluses with equal enthusiasm. Shoot film because I like the commitment — you can\'t swipe left on a photo you\'ve already taken. Currently planning my 4th trip to Japan. Yes, I have a problem.', tags: ['film photography','climbing','japan'] },
+    b: { text: 'Love traveling and trying new foods. I design apps for work and enjoy rock climbing on weekends. Film photography is my creative outlet. Looking for someone to explore the city with.', tags: ['travel','climbing','design'] }
+  },
+  {
+    person: { name: 'Sam R., 30', sub: 'Chef · Lower East Side · sourdough, natural wine, farmer\'s markets', tags: ['food','wine','sustainability'], avi: 'SR', age: '30 · Chef' },
+    a: { text: 'Professional chef who eats cereal for dinner at home. I spend 60 hours a week making food look beautiful and then can\'t be bothered. If you\'re a natural disaster in the kitchen too, we\'ll get along. My sourdough starter is named Gerald and he\'s doing great.', tags: ['sourdough','Gerald','cereal for dinner'] },
+    b: { text: 'I\'m a chef who loves trying new restaurants and cuisines. Passionate about food and sustainability. Looking for someone who appreciates good conversation and great meals.', tags: ['food','sustainability','restaurants'] }
+  },
+  {
+    person: { name: 'Morgan P., 27', sub: 'Journalist · Midtown · competitive Scrabble, annotated books', tags: ['writing','books','games'], avi: 'MP', age: '27 · Journalist' },
+    a: { text: 'I write about things I barely understand, which is apparently journalism. Amateur competitive Scrabble player (yes, really). My book-to-read pile has achieved structural integrity at this point. Looking for someone who won\'t judge my annotated paperbacks.', tags: ['Scrabble','book hoarder','curious'] },
+    b: { text: 'Journalist passionate about storytelling. I love reading, board games, and good coffee. Looking for someone curious and kind who enjoys exploring the city and talking about ideas.', tags: ['reading','coffee','board games'] }
+  }
+];
+
+// ── State ────────────────────────────────────────────────────────────────────
+let current = 0, prefs = [], busy = false;
+
+// ── DOM refs ──────────────────────────────────────────────────────────────────
+const orb      = document.getElementById('orb');
+const cardA    = document.getElementById('cardA');
+const cardB    = document.getElementById('cardB');
+const zoneA    = document.getElementById('zoneA');
+const zoneB    = document.getElementById('zoneB');
+const zoneTie  = document.getElementById('zoneTie');
+
+// ── Load pair ─────────────────────────────────────────────────────────────────
+function loadPair(idx) {
+  const pair = PAIRS[idx];
+  const p = pair.person;
+
+  document.getElementById('pairBadge').textContent = `${idx+1} / ${PAIRS.length}`;
+  document.getElementById('ctxAvi').textContent  = p.avi;
+  document.getElementById('ctxName').textContent = p.name;
+  document.getElementById('ctxSub').textContent  = p.sub;
+  document.getElementById('ctxTags').innerHTML   = p.tags.map(t => `<span class="ctx-tag">${t}</span>`).join('');
+
+  const first = p.name.split(' ')[0];
+  ['pnameA','pnameB'].forEach(id => document.getElementById(id).textContent = first);
+  ['pageA','pageB'].forEach(id => document.getElementById(id).textContent = p.age);
+
+  document.getElementById('textA').textContent = pair.a.text;
+  document.getElementById('textB').textContent = pair.b.text;
+  document.getElementById('tagsA').innerHTML = pair.a.tags.map(t=>`<span class="bio-chip">${t}</span>`).join('');
+  document.getElementById('tagsB').innerHTML = pair.b.tags.map(t=>`<span class="bio-chip">${t}</span>`).join('');
+
+  // Reset card states
+  [cardA, cardB].forEach(c => {
+    c.classList.remove('animating','state-winner','state-loser','state-tie');
+    c.style.opacity = '';
+    c.style.transform = '';
+    c.style.boxShadow = '';
+    c.style.borderColor = '';
+  });
+
+  // Build progress dots
+  document.getElementById('progressDots').innerHTML = PAIRS.map((_, i) => {
+    const cls = i < idx ? 'done' : i === idx ? 'active' : '';
+    return `<div class="pdot ${cls}"></div>`;
+  }).join('');
+
+  resetZoneLabels();
+  busy = false;
+}
+
+// ── Choose ────────────────────────────────────────────────────────────────────
+function choose(which) {
+  if (busy) return;
+  busy = true;
+
+  const pair = PAIRS[current];
+  prefs.push({ person: pair.person.name, chosen: which, a: pair.a.text, b: pair.b.text, timestamp: new Date().toISOString() });
+  document.getElementById('countLabel').textContent = `${prefs.length} collected`;
+  addHistory(pair.person.name, which);
+
+  // Animate cards
+  [cardA, cardB].forEach(c => c.classList.add('animating'));
+
+  if (which === 'A') {
+    cardA.classList.add('state-winner');
+    cardB.classList.add('state-loser');
+  } else if (which === 'B') {
+    cardB.classList.add('state-winner');
+    cardA.classList.add('state-loser');
+  } else {
+    cardA.classList.add('state-tie');
+    cardB.classList.add('state-tie');
+  }
+
+  // Advance after pause
+  setTimeout(() => {
+    current = (current + 1) % PAIRS.length;
+    if (prefs.length > 0 && prefs.length % PAIRS.length === 0 && prefs.length >= PAIRS.length) {
+      // Cycled through all once — show done (simple demo logic: show after 5)
+    }
+    if (current === 0 && prefs.length >= PAIRS.length) {
+      showDone();
+      return;
+    }
+    loadPair(current);
+  }, 650);
+}
+
+function showDone() {
+  document.getElementById('doneTitle').textContent = `All ${prefs.length} labeled!`;
+  document.getElementById('doneSub').textContent = `You collected ${prefs.length} preference${prefs.length !== 1 ? 's' : ''}. Export to use in training.`;
+  document.getElementById('doneOverlay').classList.add('visible');
+}
+
+function restartAll() {
+  document.getElementById('doneOverlay').classList.remove('visible');
+  current = 0;
+  loadPair(0);
+}
+
+// ── History ───────────────────────────────────────────────────────────────────
+function addHistory(person, which) {
+  const list = document.getElementById('historyList');
+  if (list.querySelector('.history-empty')) list.innerHTML = '';
+  const el = document.createElement('div');
+  el.className = 'history-item';
+  const label = which === 'TIE' ? 'Tie' : `Bio ${which}`;
+  el.innerHTML = `<span class="h-badge ${which}">${label}</span><span class="h-person">${person}</span><span class="h-time">just now</span>`;
+  list.insertBefore(el, list.firstChild);
+}
+
+// ── Export ────────────────────────────────────────────────────────────────────
+function exportData() {
+  if (!prefs.length) { alert('No preferences yet.'); return; }
+  const blob = new Blob([prefs.map(p => JSON.stringify(p)).join('\n')], { type: 'application/jsonl' });
+  const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'preferences.jsonl' });
+  a.click();
+}
+
+// ── Zone label helpers ────────────────────────────────────────────────────────
+function resetZoneLabels() {
+  zoneA.classList.remove('lit');
+  zoneB.classList.remove('lit');
+  zoneTie.classList.remove('lit');
+}
+
+function updateZones(dx, dy) {
+  const ZONE_THRESH = 24;
+  const absX = Math.abs(dx);
+  const absDy = Math.max(dy, 0);
+
+  resetZoneLabels();
+  if (absDy > ZONE_THRESH && absDy > absX * 0.7) {
+    zoneTie.classList.add('lit');
+  } else if (dx < -ZONE_THRESH) {
+    zoneA.classList.add('lit');
+  } else if (dx > ZONE_THRESH) {
+    zoneB.classList.add('lit');
+  }
+}
+
+// ── Live card highlight (no transition — tracks finger) ───────────────────────
+function liveCardHighlight(dx, dy) {
+  const THRESH = 60;
+  const absX = Math.abs(dx);
+  const absDy = Math.max(dy, 0);
+  const t = Math.min(absX / THRESH, 1);
+
+  // Reset inline styles first
+  [cardA, cardB].forEach(c => {
+    c.style.opacity = '';
+    c.style.transform = '';
+    c.style.boxShadow = '';
+    c.style.borderColor = '';
+  });
+
+  if (absDy > 40 && absDy > absX * 0.7) {
+    // Tie — both dim slightly
+    cardA.style.opacity = '0.72';
+    cardB.style.opacity = '0.72';
+  } else if (dx < -20) {
+    cardA.style.borderColor = `rgba(42,158,107,${0.2 + t * 0.6})`;
+    cardA.style.boxShadow = `0 0 0 ${2 + t * 5}px rgba(42,158,107,${0.05 + t * 0.12})`;
+    cardA.style.transform = `scale(${1 + t * 0.012})`;
+    cardB.style.opacity = `${1 - t * 0.5}`;
+    cardB.style.transform = `scale(${1 - t * 0.01})`;
+  } else if (dx > 20) {
+    cardB.style.borderColor = `rgba(42,158,107,${0.2 + t * 0.6})`;
+    cardB.style.boxShadow = `0 0 0 ${2 + t * 5}px rgba(42,158,107,${0.05 + t * 0.12})`;
+    cardB.style.transform = `scale(${1 + t * 0.012})`;
+    cardA.style.opacity = `${1 - t * 0.5}`;
+    cardA.style.transform = `scale(${1 - t * 0.01})`;
+  }
+}
+
+function clearLiveHighlight() {
+  [cardA, cardB].forEach(c => {
+    c.style.opacity = '';
+    c.style.transform = '';
+    c.style.boxShadow = '';
+    c.style.borderColor = '';
+  });
+}
+
+// ── Orb drag ──────────────────────────────────────────────────────────────────
+(function() {
+  const COMMIT = 90;  // px to trigger a choice
+  let startX = 0, startY = 0, currDX = 0, currDY = 0, dragging = false;
+
+  function orbTranslate(dx, dy) {
+    orb.style.transform = `translate(${dx}px, ${dy}px)`;
+  }
+
+  function snapBack() {
+    orb.classList.add('snapping');
+    orbTranslate(0, 0);
+    orb.addEventListener('transitionend', () => orb.classList.remove('snapping'), { once: true });
+    clearLiveHighlight();
+    resetZoneLabels();
+  }
+
+  function onStart(x, y) {
+    if (busy) return;
+    startX = x; startY = y;
+    currDX = 0; currDY = 0;
+    dragging = true;
+    orb.classList.add('grabbing');
+    orb.style.transition = 'none';
+  }
+
+  function onMove(x, y) {
+    if (!dragging || busy) return;
+    currDX = x - startX;
+    currDY = y - startY;
+    orbTranslate(currDX, currDY);
+    liveCardHighlight(currDX, currDY);
+    updateZones(currDX, currDY);
+  }
+
+  function onEnd() {
+    if (!dragging) return;
+    dragging = false;
+    orb.classList.remove('grabbing');
+    orb.style.transition = '';
+
+    if (busy) { snapBack(); return; }
+
+    const absX = Math.abs(currDX);
+    const absDy = Math.max(currDY, 0);
+
+    if (absDy > COMMIT && absDy > absX * 0.7) {
+      // Tie — animate orb down
+      orb.classList.add('snapping');
+      orbTranslate(0, 80);
+      orb.addEventListener('transitionend', () => { orbTranslate(0, 0); orb.classList.remove('snapping'); }, { once: true });
+      resetZoneLabels();
+      choose('TIE');
+    } else if (currDX < -COMMIT && absX > absDy * 0.7) {
+      // Prefer A — animate orb far left
+      orb.classList.add('snapping');
+      orbTranslate(-200, currDY * 0.3);
+      setTimeout(() => { orbTranslate(0, 0); }, 300);
+      resetZoneLabels();
+      choose('A');
+    } else if (currDX > COMMIT && absX > absDy * 0.7) {
+      // Prefer B — animate orb far right
+      orb.classList.add('snapping');
+      orbTranslate(200, currDY * 0.3);
+      setTimeout(() => { orbTranslate(0, 0); }, 300);
+      resetZoneLabels();
+      choose('B');
+    } else {
+      snapBack();
+    }
+  }
+
+  // Mouse
+  orb.addEventListener('mousedown', e => { e.preventDefault(); onStart(e.clientX, e.clientY); });
+  document.addEventListener('mousemove', e => onMove(e.clientX, e.clientY));
+  document.addEventListener('mouseup', () => onEnd());
+
+  // Touch
+  orb.addEventListener('touchstart', e => { e.preventDefault(); onStart(e.touches[0].clientX, e.touches[0].clientY); }, { passive: false });
+  document.addEventListener('touchmove', e => { if (dragging) { e.preventDefault(); onMove(e.touches[0].clientX, e.touches[0].clientY); } }, { passive: false });
+  document.addEventListener('touchend', () => onEnd());
+
+  // Keyboard fallback
+  document.addEventListener('keydown', e => {
+    if (busy) return;
+    if (e.key === 'ArrowLeft'  || e.key === '1') choose('A');
+    if (e.key === 'ArrowRight' || e.key === '2') choose('B');
+    if (e.key === '=' || e.key === '0')          choose('TIE');
+  });
+})();
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+loadPair(0);
+</script>
+</body>
+</html>
