@@ -72,6 +72,25 @@
     color: var(--text-2);
   }
 
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 16px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
   .subtitle {
     font-size: 0.95rem;
     color: var(--text-2);
@@ -295,6 +314,157 @@
     text-align: center;
   }
 
+  /* Preview D — Hinge Standouts warm */
+  .preview-d {
+    background: radial-gradient(ellipse at 40% 30%, #C87B4A 0%, #7A3A1A 70%, #4A1A08 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .preview-d .p-card {
+    width: 140px;
+    background: white;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .preview-d .p-pair {
+    font-size: 0.38rem;
+    color: #B8ADA4;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .preview-d .p-text {
+    font-size: 0.58rem;
+    line-height: 1.5;
+    color: #1C1410;
+    font-style: italic;
+  }
+  .preview-d .p-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .preview-d .p-avi {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 0.38rem; color: #7A6E64; font-weight: 600;
+  }
+  .preview-d .p-avi-circle {
+    width: 14px; height: 14px; border-radius: 50%;
+    background: linear-gradient(135deg, #F4A57A, #C87B4A);
+    font-size: 0.35rem; color: white;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .preview-d .p-rose { font-size: 0.8rem; }
+
+  /* Preview E — Tinder dark stack */
+  .preview-e {
+    background: #0F0F12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .preview-e .p-card-back {
+    position: absolute;
+    width: 120px; height: 130px;
+    background: linear-gradient(160deg, #1A1A2E, #16213E);
+    border-radius: 10px;
+    transform: scale(0.93) translateY(6px);
+    opacity: 0.7;
+  }
+  .preview-e .p-card {
+    position: relative;
+    width: 120px; height: 130px;
+    background: linear-gradient(160deg, #1A1A2E, #16213E);
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .preview-e .p-tag {
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2px 6px;
+    font-size: 0.37rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    align-self: flex-start;
+  }
+  .preview-e .p-text {
+    font-size: 0.5rem;
+    line-height: 1.45;
+    color: white;
+    font-style: italic;
+  }
+  .preview-e .p-actions {
+    display: flex; gap: 6px; justify-content: center;
+  }
+  .preview-e .p-act {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.6rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Preview F — Bio Duel */
+  .preview-f {
+    background: #080810;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+  }
+  .preview-f .p-vs {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #FFD700;
+    text-shadow: 0 0 8px rgba(255,215,0,0.5);
+    flex-shrink: 0;
+  }
+  .preview-f .p-card {
+    flex: 1;
+    background: #12121E;
+    border: 1px solid #1E1E2E;
+    border-radius: 8px;
+    padding: 10px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+  }
+  .preview-f .p-card.winner {
+    border-color: #FFD700;
+    box-shadow: 0 0 10px rgba(255,215,0,0.2);
+  }
+  .preview-f .p-card.loser { opacity: 0.25; }
+  .preview-f .p-lbl {
+    font-size: 0.38rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .preview-f .p-text {
+    font-size: 0.44rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.8);
+    flex: 1;
+  }
+  .preview-f .p-crown {
+    font-size: 0.65rem;
+    margin-top: 6px;
+    color: #FFD700;
+  }
+
   /* Card body */
   .card-body {
     padding: 18px 20px 20px;
@@ -370,10 +540,11 @@
 <div class="shell">
   <div class="header">
     <div class="header-eyebrow">AIPI 590 · Challenge 2 · RLHF Preference Collection</div>
-    <h1>Bio Judge<br><em>three design directions</em></h1>
+    <h1>Bio Judge<br><em>six design directions</em></h1>
     <p class="subtitle">Human preference data collection for RLHF. Each mockup shows two AI-generated Hinge bios — pick the better one to build a training dataset.</p>
   </div>
 
+  <div class="section-label">Original mockups</div>
   <div class="cards">
     <a class="card" href="mockup-a.html">
       <div class="card-preview preview-a">
@@ -453,6 +624,82 @@
         <div class="card-tag">Mockup C · Minimal</div>
         <div class="card-title">Minimal Judge</div>
         <div class="card-desc">Clean reading interface. Keyboard shortcuts (1, 2, =). No distraction.</div>
+      </div>
+      <div class="card-footer">
+        <span class="card-platform">All screens</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-label">New mockups · swipe-native</div>
+  <div class="cards">
+    <a class="card" href="mockup-d.html">
+      <div class="card-preview preview-d">
+        <div class="p-card">
+          <div class="p-pair">Bio A · Pair 1 of 5</div>
+          <div class="p-text">"I make pasta from scratch on Sundays because it's slower than my test suite."</div>
+          <div class="p-bottom">
+            <div class="p-avi">
+              <div class="p-avi-circle">JM</div>
+              Jordan M.
+            </div>
+            <div class="p-rose">✿</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Mockup D · Hinge Standouts</div>
+        <div class="card-title">Standouts</div>
+        <div class="card-desc">Hinge's editorial card aesthetic. Warm bokeh bg, big serif bio, swipe to prefer.</div>
+      </div>
+      <div class="card-footer">
+        <span class="card-platform">Mobile</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <a class="card" href="mockup-e.html">
+      <div class="card-preview preview-e">
+        <div class="p-card-back"></div>
+        <div class="p-card">
+          <div class="p-tag">Bio A</div>
+          <div class="p-text">"I write code that works on my machine (usually)."</div>
+          <div class="p-actions">
+            <div class="p-act">✕</div>
+            <div class="p-act">★</div>
+            <div class="p-act">♥</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Mockup E · Tinder Stack</div>
+        <div class="card-title">Full-Screen Stack</div>
+        <div class="card-desc">Dark full-bleed cards, physics drag with rotation + color overlay.</div>
+      </div>
+      <div class="card-footer">
+        <span class="card-platform">Mobile</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <a class="card" href="mockup-f.html">
+      <div class="card-preview preview-f">
+        <div class="p-card winner">
+          <div class="p-lbl">Bio A</div>
+          <div class="p-text">"I make pasta from scratch on Sundays because it's the only thing slower than my test suite."</div>
+          <div class="p-crown">👑</div>
+        </div>
+        <div class="p-vs">VS</div>
+        <div class="p-card loser">
+          <div class="p-lbl">Bio B</div>
+          <div class="p-text">"Love traveling and trying new foods. Looking for someone kind."</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Mockup F · Bio Duel</div>
+        <div class="card-title">Bio Duel</div>
+        <div class="card-desc">Two cards face off VS-style. Drag to champion one. Gold glow on winner.</div>
       </div>
       <div class="card-footer">
         <span class="card-platform">All screens</span>
