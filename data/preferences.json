@@ -61,8 +61,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 33, Acoustic Guitar Luthier, Fly fishing,Exploring local breweries,Oil landscape painting",
-    "chosen": "When I'm not obsessing over spruce tops and fretboards building guitars, you can find me waist-deep in a river trying to outsmart a trout. I appreciate things built with care, whether it's a perfectly carved neck or a meticulously crafted hazy IPA. Bonus points if you can tell me the difference between a sunburst and a burst.",
-    "rejected": "I like hanging out, having fun, and enjoying life. Just looking for my person who is loyal and drama-free. Let's grab a drink sometime if you're interested."
+    "chosen": "I like hanging out, having fun, and enjoying life. Just looking for my person who is loyal and drama-free. Let's grab a drink sometime if you're interested.",
+    "rejected": "When I'm not obsessing over spruce tops and fretboards building guitars, you can find me waist-deep in a river trying to outsmart a trout. I appreciate things built with care, whether it's a perfectly carved neck or a meticulously crafted hazy IPA. Bonus points if you can tell me the difference between a sunburst and a burst."
   },
   {
     "prompt": "Write a dating bio for: Male, 39, Corporate Lawyer (M&A), Skiing black diamond runs, collecting rare vinyl, grilling Argentine-style cuts of meat",
@@ -76,8 +76,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 35, Data Scientist, Competitive trivia, brewing craft beer, hiking remote trails",
-    "chosen": "I spend my days finding meaning in massive datasets, but my real passion is unplugging completely—lacing up my boots for a proper hike far off the beaten path. I enjoy the quiet focus of brewing the perfect batch of something hoppy. Would love to share my latest creation with someone who values deep conversation over surface-level chatter.",
-    "rejected": "My brain is trained to spot patterns, which is great for data science but sometimes leads to overanalyzing what your favorite type of sourdough starter is. When I’m not crunching numbers, I’m usually deep in the woods trying to find a trail that Google Maps hasn't noticed yet, or trying to win trivia night with obscure 90s music knowledge. Looking for someone cool enough to appreciate a complex IPA and tolerate my occasional need to explain the Central Limit Theorem."
+    "chosen": "My brain is trained to spot patterns, which is great for data science but sometimes leads to overanalyzing what your favorite type of sourdough starter is. When I’m not crunching numbers, I’m usually deep in the woods trying to find a trail that Google Maps hasn't noticed yet, or trying to win trivia night with obscure 90s music knowledge. Looking for someone cool enough to appreciate a complex IPA and tolerate my occasional need to explain the Central Limit Theorem.",
+    "rejected": "I spend my days finding meaning in massive datasets, but my real passion is unplugging completely—lacing up my boots for a proper hike far off the beaten path. I enjoy the quiet focus of brewing the perfect batch of something hoppy. Would love to share my latest creation with someone who values deep conversation over surface-level chatter."
   },
   {
     "prompt": "Write a dating bio for: Female, 40, Pediatric Nurse Practitioner, Vinyasa yoga, hiking national parks, tending to a large vegetable garden",
@@ -91,8 +91,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 35, Cyber Security Consultant, Competitive axe throwing,Homebrewing IPA,Learning Mandarin",
-    "chosen": "When I'm not deep in binary code, you can find me trying to hit a bullseye with an axe or perfecting the next IPA in my garage setup. I'm genuinely curious about what makes people tick and I'm always looking to pick up a new skill, like the tricky tones of Mandarin. Seeking someone genuine to share good drinks and good conversation with.",
-    "rejected": "I spend my days protecting networks from digital bad guys, but I'm much more interested in figuring out if your taste buds prefer hazy or West Coast IPAs. If you can handle a debate about the Oxford comma and don't mind someone who occasionally needs to vent about server downtime, let's chat. Bonus points if you're willing to try my latest homebrew batch (it's probably fine)."
+    "chosen": "I spend my days protecting networks from digital bad guys, but I'm much more interested in figuring out if your taste buds prefer hazy or West Coast IPAs. If you can handle a debate about the Oxford comma and don't mind someone who occasionally needs to vent about server downtime, let's chat. Bonus points if you're willing to try my latest homebrew batch (it's probably fine).",
+    "rejected": "When I'm not deep in binary code, you can find me trying to hit a bullseye with an axe or perfecting the next IPA in my garage setup. I'm genuinely curious about what makes people tick and I'm always looking to pick up a new skill, like the tricky tones of Mandarin. Seeking someone genuine to share good drinks and good conversation with."
   },
   {
     "prompt": "Write a dating bio for: Female, 21, Veterinary Technician, Trail running with my dog, true crime podcasts, songwriting",
@@ -206,8 +206,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 40, Paramedic, Powerlifting, woodworking (specializing in small boxes), following obscure European football leagues",
-    "chosen": "I value stability, both in my career saving lives and in my hobbies of building sturdy things with my hands. I believe the best connections are built slowly, like a good dovetail joint. I’m seeking someone genuine to share quiet evenings with after a long week, perhaps trying to keep my obscure football allegiances straight.",
-    "rejected": "When I'm not running towards emergencies as a paramedic, you can find me in the garage crafting tiny wooden boxes or yelling at my TV while watching football teams nobody else has heard of from Eastern Europe. Looking for someone who appreciates a steady hand in a crisis and doesn't mind the smell of sawdust on a Saturday morning. Bonus points if you can explain the offside rule in the Slovenian second division."
+    "chosen": "When I'm not running towards emergencies as a paramedic, you can find me in the garage crafting tiny wooden boxes or yelling at my TV while watching football teams nobody else has heard of from Eastern Europe. Looking for someone who appreciates a steady hand in a crisis and doesn't mind the smell of sawdust on a Saturday morning. Bonus points if you can explain the offside rule in the Slovenian second division.",
+    "rejected": "I value stability, both in my career saving lives and in my hobbies of building sturdy things with my hands. I believe the best connections are built slowly, like a good dovetail joint. I’m seeking someone genuine to share quiet evenings with after a long week, perhaps trying to keep my obscure football allegiances straight."
   },
   {
     "prompt": "Write a dating bio for: Male, 31, UX Designer, 3D printing custom miniatures, playing jazz saxophone, competitive trivia",
@@ -216,8 +216,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 40, Construction Project Manager, Restoring classic motorcycles, fly fishing, grilling low-and-slow BBQ",
-    "chosen": "If you enjoy the smell of sawdust and the slow, meditative process of taking something apart and putting it back together better than it was, we might get along. I spend my weekends wrestling with vintage engines or patiently waiting for the perfect trout. Looking for someone who appreciates a perfectly smoked rib and has opinions about the right kind of wrench.",
-    "rejected": "My professional life involves juggling deadlines and concrete; my personal life is dedicated to the satisfying tang of a well-seasoned brisket and the quiet focus of a riverbank. Maybe you can teach me a new knot, and I can teach you the patience required for true low-and-slow cooking. Seeking genuine connection over shared experiences, whether that's the open road or a quiet evening on the patio."
+    "chosen": "My professional life involves juggling deadlines and concrete; my personal life is dedicated to the satisfying tang of a well-seasoned brisket and the quiet focus of a riverbank. Maybe you can teach me a new knot, and I can teach you the patience required for true low-and-slow cooking. Seeking genuine connection over shared experiences, whether that's the open road or a quiet evening on the patio.",
+    "rejected": "If you enjoy the smell of sawdust and the slow, meditative process of taking something apart and putting it back together better than it was, we might get along. I spend my weekends wrestling with vintage engines or patiently waiting for the perfect trout. Looking for someone who appreciates a perfectly smoked rib and has opinions about the right kind of wrench."
   },
   {
     "prompt": "Write a dating bio for: Male, 35, Aerospace Engineer, Long-distance running, homebrewing IPAs, astrophotography",
@@ -286,8 +286,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 28, Data Scientist, Homebrewing craft beer, competitive chess, hiking in the Pacific Northwest",
-    "chosen": "I spend my days wrangling data and my evenings trying to wrangle yeast into something delicious. If you're looking for someone who can debate the merits of a good IPA or strategize my way out of a checkmate, I'm your guy. Bonus points if you can keep up on a moderately strenuous PNW trail.",
-    "rejected": "Curious and analytical, I find beauty in both complex algorithms and the perfect balance of hops in a new brew. I enjoy the quiet focus of a good chess match, but I'm always ready to trade screen time for sunlight and explore the trails nearby. Seeking someone genuine who appreciates thoughtful conversation and maybe a perfectly poured stout."
+    "chosen": "Curious and analytical, I find beauty in both complex algorithms and the perfect balance of hops in a new brew. I enjoy the quiet focus of a good chess match, but I'm always ready to trade screen time for sunlight and explore the trails nearby. Seeking someone genuine who appreciates thoughtful conversation and maybe a perfectly poured stout.",
+    "rejected": "I spend my days wrangling data and my evenings trying to wrangle yeast into something delicious. If you're looking for someone who can debate the merits of a good IPA or strategize my way out of a checkmate, I'm your guy. Bonus points if you can keep up on a moderately strenuous PNW trail."
   },
   {
     "prompt": "Write a dating bio for: Male, 31, Architectural Renderer, Fly fishing in remote locations, landscape photography, perfecting handmade pasta recipes",
@@ -301,8 +301,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 26, Aerospace Engineer, Amateur astronomy, rock climbing, learning Mandarin",
-    "chosen": "My day job involves rockets, but my free time is dedicated to scaling rock faces and mapping stars visible from my apartment balcony. I value curiosity and a good challenge, whether it's figuring out a complex route or mastering a new tonal language. Let's grab coffee and discuss which celestial body we'd colonize first.",
-    "rejected": "Currently designing the hardware that will take us to the next frontier, but I'm pretty happy grounded here on Earth for now. If you can tell the difference between Jupiter and Saturn, you're already ahead of the game. Bonus points if you're patient enough to watch me fumble through basic Mandarin sentences. Looking for someone to share the view with."
+    "chosen": "Currently designing the hardware that will take us to the next frontier, but I'm pretty happy grounded here on Earth for now. If you can tell the difference between Jupiter and Saturn, you're already ahead of the game. Bonus points if you're patient enough to watch me fumble through basic Mandarin sentences. Looking for someone to share the view with.",
+    "rejected": "My day job involves rockets, but my free time is dedicated to scaling rock faces and mapping stars visible from my apartment balcony. I value curiosity and a good challenge, whether it's figuring out a complex route or mastering a new tonal language. Let's grab coffee and discuss which celestial body we'd colonize first."
   },
   {
     "prompt": "Write a dating bio for: Female, 22, Elementary School Teacher, Thrifting unique clothing, painting watercolors, training for a half-marathon",
@@ -331,8 +331,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 26, Frontend Developer, Bouldering, playing electric guitar in a cover band, vinyl collecting",
-    "chosen": "Currently debugging my love life, but my frontend skills are top-notch. When I'm not optimizing CSS, you can find me scaling a wall or channeling my inner rock god with my cover band. Seeking someone to share vinyl spins and maybe critique my latest riff.",
-    "rejected": "I spend my days building clean interfaces and my nights playing loud music. I'm really passionate about climbing and finding obscure records, which means my apartment is moderately full of gear and cardboard sleeves. Hoping to find a genuine connection with someone who appreciates a good B-side."
+    "chosen": "I spend my days building clean interfaces and my nights playing loud music. I'm really passionate about climbing and finding obscure records, which means my apartment is moderately full of gear and cardboard sleeves. Hoping to find a genuine connection with someone who appreciates a good B-side.",
+    "rejected": "Currently debugging my love life, but my frontend skills are top-notch. When I'm not optimizing CSS, you can find me scaling a wall or channeling my inner rock god with my cover band. Seeking someone to share vinyl spins and maybe critique my latest riff."
   },
   {
     "prompt": "Write a dating bio for: Female, 28, Architectural Designer, Urban sketching,Vinyl collecting,Trying experimental cocktails",
@@ -341,8 +341,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 26, Electrician, Woodworking, playing bass guitar, wakeboarding",
-    "chosen": "I like fun and food. Looking for my person. Must like dogs and adventure.",
-    "rejected": "I spend my weekdays wrestling with circuits and my weekends in the workshop building things that don't shock you. When I'm not covered in sawdust or learning a new bass riff, you can find me trying not to fall off a wakeboard. Looking for somebody who appreciates a well-grounded partner (literally and figuratively)."
+    "chosen": "I spend my weekdays wrestling with circuits and my weekends in the workshop building things that don't shock you. When I'm not covered in sawdust or learning a new bass riff, you can find me trying not to fall off a wakeboard. Looking for somebody who appreciates a well-grounded partner (literally and figuratively).",
+    "rejected": "I like fun and food. Looking for my person. Must like dogs and adventure."
   },
   {
     "prompt": "Write a dating bio for: Non-binary, 24, UX Writer, Competitive roller derby, digital illustration, urban gardening",
@@ -456,8 +456,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 35, Environmental Consultant, Competitive curling,Home brewing kombucha,Hiking Appalachian trails",
-    "chosen": "Seeking someone to share a perfectly brewed batch of something fizzy with, preferably after a long day spent exploring the local trails. I can offer surprisingly accurate weather predictions and world-class commentary on competitive curling. If you appreciate passion, whether it's for sustainability or a well-aged fermentation, let's connect.",
-    "rejected": "I spend my weekdays trying to save the planet, my weekends trying to save my kombucha from turning into vinegar, and my winter nights aiming stones at a target. Ideally, you enjoy a good, slightly sour beverage and don't mind carrying the heavier pack on steep inclines. I'm looking for someone who values balance, whether that's between the earth and industry, or between ambition and a quiet evening in."
+    "chosen": "I spend my weekdays trying to save the planet, my weekends trying to save my kombucha from turning into vinegar, and my winter nights aiming stones at a target. Ideally, you enjoy a good, slightly sour beverage and don't mind carrying the heavier pack on steep inclines. I'm looking for someone who values balance, whether that's between the earth and industry, or between ambition and a quiet evening in.",
+    "rejected": "Seeking someone to share a perfectly brewed batch of something fizzy with, preferably after a long day spent exploring the local trails. I can offer surprisingly accurate weather predictions and world-class commentary on competitive curling. If you appreciate passion, whether it's for sustainability or a well-aged fermentation, let's connect."
   },
   {
     "prompt": "Write a dating bio for: Male, 26, Financial Analyst, Golfing at sunrise,Investing in niche cryptocurrency,Attending jazz festivals",
@@ -471,8 +471,8 @@
   },
   {
     "prompt": "Write a dating bio for: Female, 38, Pediatric Nurse, Restoring mid-century modern furniture, dark roast coffee brewing, hiking the local state parks",
-    "chosen": "I spend my days navigating the controlled chaos of the pediatric ward, so I appreciate a calm Sunday afternoon. Currently trying to master the perfect pour-over while patiently sanding down a teak credenza. Looking for someone whose company is as reliably excellent as a dark roast on a chilly morning.",
-    "rejected": "If you can handle my enthusiasm for both saving tiny humans and painstakingly refinishing vintage wood, we might be a fit. I love getting lost on a good state park trail, provided we stop somewhere excellent for coffee afterward. Let's trade stories about our latest fixer-uppers."
+    "chosen": "If you can handle my enthusiasm for both saving tiny humans and painstakingly refinishing vintage wood, we might be a fit. I love getting lost on a good state park trail, provided we stop somewhere excellent for coffee afterward. Let's trade stories about our latest fixer-uppers.",
+    "rejected": "I spend my days navigating the controlled chaos of the pediatric ward, so I appreciate a calm Sunday afternoon. Currently trying to master the perfect pour-over while patiently sanding down a teak credenza. Looking for someone whose company is as reliably excellent as a dark roast on a chilly morning."
   },
   {
     "prompt": "Write a dating bio for: Male, 35, Aerospace Systems Engineer, Competitive axe throwing, learning Mandarin, building custom mechanical keyboards",
@@ -511,8 +511,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 35, Data Scientist, Competitive chess, Craft beer brewing, Trail running",
-    "chosen": "When I'm not buried in data sets, you can find me logging long miles on the trails or focusing intently over a chessboard. I enjoy the precision of my work, but I'm seeking someone who appreciates the messy, delightful spontaneity of life outside the office. If you appreciate a well-crafted beer and have a healthy disdain for unnecessary small talk, let's connect.",
-    "rejected": "I spend my days wrangling algorithms and my evenings analyzing probabilities, so I'm looking for someone who defies easy prediction. My ideal first date involves a complex IPA and the ability to argue about the theoretical physics of a perfect pilsner. Warning: I will try to apply my competitive chess strategies to deciding where we order takeout."
+    "chosen": "I spend my days wrangling algorithms and my evenings analyzing probabilities, so I'm looking for someone who defies easy prediction. My ideal first date involves a complex IPA and the ability to argue about the theoretical physics of a perfect pilsner. Warning: I will try to apply my competitive chess strategies to deciding where we order takeout.",
+    "rejected": "When I'm not buried in data sets, you can find me logging long miles on the trails or focusing intently over a chessboard. I enjoy the precision of my work, but I'm seeking someone who appreciates the messy, delightful spontaneity of life outside the office. If you appreciate a well-crafted beer and have a healthy disdain for unnecessary small talk, let's connect."
   },
   {
     "prompt": "Write a dating bio for: Female, 29, Speech-Language Pathologist, Baking sourdough bread,Practicing aerial silks,Curating Spotify playlists",
@@ -601,8 +601,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 26, Sustainability Consultant, Bouldering, brewing craft beer at home, volunteering for community gardens",
-    "chosen": "I like fun and food. Looking for my person who is drama-free and ready to settle down. Message me if you like the outdoors.",
-    "rejected": "Currently trying to save the planet one spreadsheet at a time as a sustainability consultant, but I'd much rather be scaling a wall at the bouldering gym. When I'm not analyzing carbon footprints, you can find me experimenting with my latest homebrew creation. Looking for someone who appreciates a good IPA and doesn't mind getting their hands dirty digging in the community garden."
+    "chosen": "Currently trying to save the planet one spreadsheet at a time as a sustainability consultant, but I'd much rather be scaling a wall at the bouldering gym. When I'm not analyzing carbon footprints, you can find me experimenting with my latest homebrew creation. Looking for someone who appreciates a good IPA and doesn't mind getting their hands dirty digging in the community garden.",
+    "rejected": "I like fun and food. Looking for my person who is drama-free and ready to settle down. Message me if you like the outdoors."
   },
   {
     "prompt": "Write a dating bio for: Female, 34, Architectural Designer, Urban sketching, restoring vintage furniture, attending independent film festivals",
@@ -681,8 +681,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 40, Financial Auditor, Restoring classic muscle cars, fly fishing in remote rivers, collecting rare vinyl jazz records",
-    "chosen": "My ideal evening involves putting on some Miles Davis, maybe reading a book, or planning the next trip to a quiet river where cellphone service is nonexistent. While my job is in finance, my real passion lies in preserving things with soul, whether that's a '69 Mustang or a pristine Blue Note pressing. Looking for someone genuine to share slow mornings and good conversation with.",
-    "rejected": "I spend my days making sure spreadsheets balance, but my weekends are spent wrestling with V8 engines or trying to convince a trout that my fly is a five-star meal. If you appreciate a meticulous eye for detail that can also appreciate the beauty of expertly tuned analog sound, we should connect. Bonus points if you own earplugs for when my latest restoration project backfires loudly."
+    "chosen": "I spend my days making sure spreadsheets balance, but my weekends are spent wrestling with V8 engines or trying to convince a trout that my fly is a five-star meal. If you appreciate a meticulous eye for detail that can also appreciate the beauty of expertly tuned analog sound, we should connect. Bonus points if you own earplugs for when my latest restoration project backfires loudly.",
+    "rejected": "My ideal evening involves putting on some Miles Davis, maybe reading a book, or planning the next trip to a quiet river where cellphone service is nonexistent. While my job is in finance, my real passion lies in preserving things with soul, whether that's a '69 Mustang or a pristine Blue Note pressing. Looking for someone genuine to share slow mornings and good conversation with."
   },
   {
     "prompt": "Write a dating bio for: Female, 28, Archivist, Collecting vintage postcards, urban sketching, tending to my succulent collection",
@@ -766,13 +766,13 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 22, Software Sales Representative, Learning Mandarin, attending live jazz shows, ultimate frisbee",
-    "chosen": "I balance the corporate hustle with a genuine appreciation for things that move me—whether that's the complex improvisation of a jazz soloist or the satisfying arc of a perfect ultimate frisbee pass. I'm currently chipping away at conversational Mandarin, so bonus points if you know a good phrase for ordering takeout. Seeking someone who values authentic connection and doesn't mind explaining why the bass line in cool jazz is so important.",
-    "rejected": "Currently navigating the exciting world of software sales, which mostly means I spend my days learning how algorithms can solve human problems (and occasionally trying to learn Mandarin which feels like solving human problems in slow motion). When I'm not working, you can find me chasing a plastic disc across a field or getting lost in the complex rhythms of a live jazz trio. Looking for someone to share good music and maybe debate the merits of various frisbee throws."
+    "chosen": "Currently navigating the exciting world of software sales, which mostly means I spend my days learning how algorithms can solve human problems (and occasionally trying to learn Mandarin which feels like solving human problems in slow motion). When I'm not working, you can find me chasing a plastic disc across a field or getting lost in the complex rhythms of a live jazz trio. Looking for someone to share good music and maybe debate the merits of various frisbee throws.",
+    "rejected": "I balance the corporate hustle with a genuine appreciation for things that move me—whether that's the complex improvisation of a jazz soloist or the satisfying arc of a perfect ultimate frisbee pass. I'm currently chipping away at conversational Mandarin, so bonus points if you know a good phrase for ordering takeout. Seeking someone who values authentic connection and doesn't mind explaining why the bass line in cool jazz is so important."
   },
   {
     "prompt": "Write a dating bio for: Male, 28, Wind Turbine Technician, Rock climbing (bouldering), playing fingerstyle acoustic guitar, thrift store record hunts",
-    "chosen": "By day, I'm up where the eagles are, keeping those massive turbines spinning. By night, you'll find me grounded in my living room, attempting complicated fingerstyle arrangements or browsing thrift stores for vinyl treasures. I'm genuinely passionate about analog things and the satisfaction of getting better at something you enjoy. Let's grab a coffee and compare favorite album finds.",
-    "rejected": "I spend my week repairing giants hundreds of feet in the air, so for fun, I like clinging to smaller things with my fingertips. When I'm not scaling rocks or coaxing melodies out of my acoustic guitar, I'm usually digging through dusty crates hoping to unearth a classic LP. Seeking someone who appreciates the quiet satisfaction of mastering a difficult skill, whether it's a new climbing route or a tricky guitar riff."
+    "chosen": "I spend my week repairing giants hundreds of feet in the air, so for fun, I like clinging to smaller things with my fingertips. When I'm not scaling rocks or coaxing melodies out of my acoustic guitar, I'm usually digging through dusty crates hoping to unearth a classic LP. Seeking someone who appreciates the quiet satisfaction of mastering a difficult skill, whether it's a new climbing route or a tricky guitar riff.",
+    "rejected": "By day, I'm up where the eagles are, keeping those massive turbines spinning. By night, you'll find me grounded in my living room, attempting complicated fingerstyle arrangements or browsing thrift stores for vinyl treasures. I'm genuinely passionate about analog things and the satisfaction of getting better at something you enjoy. Let's grab a coffee and compare favorite album finds."
   },
   {
     "prompt": "Write a dating bio for: Male, 40, Construction Project Manager, Restoring classic motorcycles, fly fishing, grilling brisket",
@@ -796,8 +796,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 31, Frontend Developer, Competitive video gaming, learning Python, making homemade pasta",
-    "chosen": "When I'm not wrangling CSS into submission, you can find me deep into a competitive gaming grind or perfecting my sourdough starter. I speak fluent sarcasm and can make a mean carbonara from scratch. Looking for someone who appreciates a good dark mode and can handle my occasional need to explain the intricacies of state management.",
-    "rejected": "I like fun and food. Looking for my person. I work as a developer and I enjoy gaming. Message me if you think we'd get along."
+    "chosen": "I like fun and food. Looking for my person. I work as a developer and I enjoy gaming. Message me if you think we'd get along.",
+    "rejected": "When I'm not wrangling CSS into submission, you can find me deep into a competitive gaming grind or perfecting my sourdough starter. I speak fluent sarcasm and can make a mean carbonara from scratch. Looking for someone who appreciates a good dark mode and can handle my occasional need to explain the intricacies of state management."
   },
   {
     "prompt": "Write a dating bio for: Female, 29, Museum Curator, Collecting vintage postcards, Ethiopian coffee ceremonies, urban sketching",
@@ -836,8 +836,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 35, Cybersecurity Analyst, Competitive chess, restoring old vinyl records, amateur mixology",
-    "chosen": "My job is keeping digital bad guys out, but I spend my evenings trying to perfect a proper Old Fashioned. I take my hobbies seriously, whether it's outmaneuvering someone over a 64-square board or finding the perfect crackle on a 70s pressing. Looking for someone who appreciates precision, but doesn't mind a little controlled chaos.",
-    "rejected": "I spend my days behind firewalls, so my free time is dedicated to things with actual texture: vinyl grooves and perfectly balanced cocktails. I'm competitive at chess, but very low-stakes about almost everything else. If you're looking for someone thoughtful who can mix you a mean drink on a Tuesday, let's connect."
+    "chosen": "I spend my days behind firewalls, so my free time is dedicated to things with actual texture: vinyl grooves and perfectly balanced cocktails. I'm competitive at chess, but very low-stakes about almost everything else. If you're looking for someone thoughtful who can mix you a mean drink on a Tuesday, let's connect.",
+    "rejected": "My job is keeping digital bad guys out, but I spend my evenings trying to perfect a proper Old Fashioned. I take my hobbies seriously, whether it's outmaneuvering someone over a 64-square board or finding the perfect crackle on a 70s pressing. Looking for someone who appreciates precision, but doesn't mind a little controlled chaos."
   },
   {
     "prompt": "Write a dating bio for: Male, 35, Data Scientist, Amateur astronomy, competitive Scrabble, brewing kombucha",
@@ -886,8 +886,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 31, Frontend Developer, Bouldering, sourdough baking, building mechanical keyboards",
-    "chosen": "I build beautiful things on the web for a living, and sometimes turn flour and water into edible works of art at home. When I need a break from the screen, you'll find me carefully planning my next bouldering route. Let's trade sourdough starter tips and see where the conversation takes us.",
-    "rejected": "If you can handle my extremely detailed opinions on CSS frameworks and my slightly concerning obsession with perfectly proofed dough, we might just click. I spend my downtime scaling walls or assembling tiny, clicky things for my desk. Looking for someone who appreciates a complex algorithm as much as a perfectly crisp loaf."
+    "chosen": "If you can handle my extremely detailed opinions on CSS frameworks and my slightly concerning obsession with perfectly proofed dough, we might just click. I spend my downtime scaling walls or assembling tiny, clicky things for my desk. Looking for someone who appreciates a complex algorithm as much as a perfectly crisp loaf.",
+    "rejected": "I build beautiful things on the web for a living, and sometimes turn flour and water into edible works of art at home. When I need a break from the screen, you'll find me carefully planning my next bouldering route. Let's trade sourdough starter tips and see where the conversation takes us."
   },
   {
     "prompt": "Write a dating bio for: Male, 34, Data Scientist, Trail running, brewing craft beer, learning Mandarin",
@@ -921,8 +921,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 31, Frontend Developer, Bouldering, sourdough baking, minimalist camping",
-    "chosen": "I build beautiful things on the internet for a living, but I'm more interested in building real connections. My weekends usually involve getting my hands dirty—either kneading dough or finding the perfect handhold at the bouldering gym. Seeking an adventurous spirit for quiet evenings and challenging climbs.",
-    "rejected": "Currently optimizing my dating profile, but I promise my JavaScript skills are smoother than my sourdough starter. When I'm not debugging code, you'll find me trying to scale a wall or setting up a very aesthetically pleasing (and very small) campsite. Looking for someone who appreciates clean code and a good rise."
+    "chosen": "Currently optimizing my dating profile, but I promise my JavaScript skills are smoother than my sourdough starter. When I'm not debugging code, you'll find me trying to scale a wall or setting up a very aesthetically pleasing (and very small) campsite. Looking for someone who appreciates clean code and a good rise.",
+    "rejected": "I build beautiful things on the internet for a living, but I'm more interested in building real connections. My weekends usually involve getting my hands dirty—either kneading dough or finding the perfect handhold at the bouldering gym. Seeking an adventurous spirit for quiet evenings and challenging climbs."
   },
   {
     "prompt": "Write a dating bio for: Female, 28, Marine Biologist, Scuba diving with hammerhead sharks,Amateur astrophotography,Restoring vintage furniture",
@@ -1001,8 +1001,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 29, Electrician, Mountain biking, craft beer brewing, woodworking",
-    "chosen": "My toolkit includes both a multimeter and a lathe; my ideal Saturday involves a challenging bike ride followed by tasting something new from the fermentation fridge. I enjoy hands-on projects and building things that last. Seeking someone genuine who values creativity and doesn't take themselves too seriously.",
-    "rejected": "I spend my days wrangling wires and my weekends covered in sawdust or mud. If you can appreciate the subtle notes in a good home-brewed IPA and don't mind the smell of wood stain, we might get along. Looking for someone who enjoys a good adventure, whether that's hitting a technical trail or just settling in for a quiet evening."
+    "chosen": "I spend my days wrangling wires and my weekends covered in sawdust or mud. If you can appreciate the subtle notes in a good home-brewed IPA and don't mind the smell of wood stain, we might get along. Looking for someone who enjoys a good adventure, whether that's hitting a technical trail or just settling in for a quiet evening.",
+    "rejected": "My toolkit includes both a multimeter and a lathe; my ideal Saturday involves a challenging bike ride followed by tasting something new from the fermentation fridge. I enjoy hands-on projects and building things that last. Seeking someone genuine who values creativity and doesn't take themselves too seriously."
   },
   {
     "prompt": "Write a dating bio for: Female, 28, UX Researcher, Urban sketching, independent film analysis, collecting vintage typewriters",
@@ -1031,13 +1031,13 @@
   },
   {
     "prompt": "Write a dating bio for: Female, 33, Horticultural Therapist, Restoring antique books,Foraging for wild mushrooms,Homebrewing kombucha",
-    "chosen": "Currently accepting applications for someone to help me label my jars of fermented tea and decide which rare volume needs repairing next. I find beauty in things that take time, whether it’s coaxing a rare mushroom out of the woods or restoring brittle, forgotten pages. Seeking someone who values depth, enjoys quiet discovery, and maybe knows a good mushroom spot I haven't found yet.",
-    "rejected": "I spend my days helping people grow, which feels fitting since I'm usually elbow-deep in soil or nursing a sourdough starter. My weekends involve hunting for elusive fungi or trying to coax the wild yeast in my latest kombucha batch. If you appreciate the slow magic of living things and don't mind the occasional earthy aroma clinging to my sweater, let's connect."
+    "chosen": "I spend my days helping people grow, which feels fitting since I'm usually elbow-deep in soil or nursing a sourdough starter. My weekends involve hunting for elusive fungi or trying to coax the wild yeast in my latest kombucha batch. If you appreciate the slow magic of living things and don't mind the occasional earthy aroma clinging to my sweater, let's connect.",
+    "rejected": "Currently accepting applications for someone to help me label my jars of fermented tea and decide which rare volume needs repairing next. I find beauty in things that take time, whether it’s coaxing a rare mushroom out of the woods or restoring brittle, forgotten pages. Seeking someone who values depth, enjoys quiet discovery, and maybe knows a good mushroom spot I haven't found yet."
   },
   {
     "prompt": "Write a dating bio for: Female, 38, Pediatric Nurse Practitioner, Volunteering at an animal sanctuary, pottery wheel throwing, reading espionage thrillers",
-    "chosen": "I spend my days caring for tiny humans and my free time trying to bring slightly less tiny animals peace and quiet at the sanctuary. There's something grounding about the focus required for both nursing and throwing clay. If you enjoy thoughtful conversation and maybe occasionally getting your hands dirty, let's connect.",
-    "rejected": "When I'm not navigating the chaos of the ER or obsessing over the latest John le Carré, you can find me attempting to center clay on a pottery wheel. I save lives during the day and rescue slightly less urgent lives (goats and bunnies) on the weekend. Looking for someone who appreciates a good plot twist both in literature and dinner plans."
+    "chosen": "When I'm not navigating the chaos of the ER or obsessing over the latest John le Carré, you can find me attempting to center clay on a pottery wheel. I save lives during the day and rescue slightly less urgent lives (goats and bunnies) on the weekend. Looking for someone who appreciates a good plot twist both in literature and dinner plans.",
+    "rejected": "I spend my days caring for tiny humans and my free time trying to bring slightly less tiny animals peace and quiet at the sanctuary. There's something grounding about the focus required for both nursing and throwing clay. If you enjoy thoughtful conversation and maybe occasionally getting your hands dirty, let's connect."
   },
   {
     "prompt": "Write a dating bio for: Female, 28, Librarian, Vintage film photography, urban gardening, learning conversational Italian",
@@ -1051,8 +1051,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 39, Firefighter, Grilling competitions,Restoring classic motorcycles,Hiking in national parks",
-    "chosen": "When I'm not smelling like smoke from work, I'm usually smelling like mesquite from hosting a backyard grilling competition. Currently restoring a vintage Triumph, but I need a co-pilot for future park adventures. If you can handle a little grease, a lot of mountain air, and genuinely enjoy trying dangerously spicy rubs, let's talk.",
-    "rejected": "I spend my days saving people, but my weekends are dedicated to perfecting the art of the perfect sear. I enjoy the thrill of a long motorcycle ride followed by a quiet evening under the stars in a national park. Looking for someone who appreciates a good flame, whether it's on a grill or in a conversation."
+    "chosen": "I spend my days saving people, but my weekends are dedicated to perfecting the art of the perfect sear. I enjoy the thrill of a long motorcycle ride followed by a quiet evening under the stars in a national park. Looking for someone who appreciates a good flame, whether it's on a grill or in a conversation.",
+    "rejected": "When I'm not smelling like smoke from work, I'm usually smelling like mesquite from hosting a backyard grilling competition. Currently restoring a vintage Triumph, but I need a co-pilot for future park adventures. If you can handle a little grease, a lot of mountain air, and genuinely enjoy trying dangerously spicy rubs, let's talk."
   },
   {
     "prompt": "Write a dating bio for: Female, 37, Pediatric Nurse, Gardening (especially succulents), sailing lessons, volunteering at the local animal rescue",
@@ -1106,8 +1106,8 @@
   },
   {
     "prompt": "Write a dating bio for: Female, 33, Epidemiologist, Trail running, mastering complex risotto recipes, independent bookstore browsing",
-    "chosen": "I spend my days tracking invisible threats, so maybe I'm uniquely qualified to spot a good match in person. When I'm not analyzing data or chasing down my next PR on the trails, you can find me testing the emulsification capabilities of Arborio rice. Looking for someone who appreciates both meticulous planning and getting lost in the fiction aisle.",
-    "rejected": "If you can handle my deep dives into R-naught values, you might be ready for my homemade risotto. I love the quiet focus of a long trail run and the chaotic joy of finding that perfect, obscure book. Seeking someone genuine who enjoys cozy evenings but isn't afraid of a little mud."
+    "chosen": "If you can handle my deep dives into R-naught values, you might be ready for my homemade risotto. I love the quiet focus of a long trail run and the chaotic joy of finding that perfect, obscure book. Seeking someone genuine who enjoys cozy evenings but isn't afraid of a little mud.",
+    "rejected": "I spend my days tracking invisible threats, so maybe I'm uniquely qualified to spot a good match in person. When I'm not analyzing data or chasing down my next PR on the trails, you can find me testing the emulsification capabilities of Arborio rice. Looking for someone who appreciates both meticulous planning and getting lost in the fiction aisle."
   },
   {
     "prompt": "Write a dating bio for: Female, 28, Museum Curator (Modern Art), Ceramic throwing, independent film analysis, collecting vintage postcards",
@@ -1161,8 +1161,8 @@
   },
   {
     "prompt": "Write a dating bio for: Male, 40, Physical Therapist, Long-distance cycling, craft beer brewing, reading historical fiction",
-    "chosen": "If you enjoy cycling distances that require snacks and recovery drinks, we might get along. I spend my free time trying to perfect my IPA recipes, which usually results in interesting garage experiments. Looking for someone who appreciates a well-researched historical novel and doesn't mind talking about muscle recovery techniques.",
-    "rejected": "I find genuine fulfillment helping people move better, and I apply that same meticulous approach to brewing beer. My happy place is on a long road ride with a great audiobook queued up for the cooldown. Seeking a thoughtful person interested in exploring the past through fiction and enjoying the present one craft pour at a time."
+    "chosen": "I find genuine fulfillment helping people move better, and I apply that same meticulous approach to brewing beer. My happy place is on a long road ride with a great audiobook queued up for the cooldown. Seeking a thoughtful person interested in exploring the past through fiction and enjoying the present one craft pour at a time.",
+    "rejected": "If you enjoy cycling distances that require snacks and recovery drinks, we might get along. I spend my free time trying to perfect my IPA recipes, which usually results in interesting garage experiments. Looking for someone who appreciates a well-researched historical novel and doesn't mind talking about muscle recovery techniques."
   },
   {
     "prompt": "Write a dating bio for: Female, 26, Museum Exhibit Designer, Ceramics throwing, historical costuming, learning conversational Portuguese",
