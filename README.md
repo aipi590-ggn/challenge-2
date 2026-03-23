@@ -82,7 +82,17 @@ Each notebook is self-contained and installs its own dependencies. To run locall
 pip install -r requirements.txt
 ```
 
-Notebooks that publish results back to GitHub require a `GITHUB_TOKEN` Colab secret with write access to this repo.
+### GitHub token (one-time, for publishing results)
+
+Notebooks push charts and metrics back to this repo from their final cell. This requires a `GITHUB_TOKEN` Colab secret with write access.
+
+1. Go to **GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**
+2. Set repository access to **Only select repositories → aipi590-challenge-2**
+3. Under Permissions → Repository permissions, set **Contents** to **Read and Write**
+4. Generate and copy the token
+5. In Colab, click the **key icon** in the left sidebar → **Secrets** → **Add new secret**, name it `GITHUB_TOKEN`, paste the token, and enable notebook access
+
+![Colab Secrets panel showing GITHUB_TOKEN](docs/assets/colab-secrets.png)
 
 ---
 
